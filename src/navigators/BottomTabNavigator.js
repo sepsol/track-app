@@ -1,12 +1,26 @@
 import React from 'react';
-
-import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import TrackListScreen from '../screens/TrackListScreen';
+import TrackStackNavigator from '../navigators/TrackStackNavigator';
+
 import TrackCreateScreen from '../screens/TrackCreateScreen';
 import AccountScreen from '../screens/AccountScreen';
 
 
 
-//
+const BottomTab = createBottomTabNavigator();
+
+
+function BottomTabNavigator() {
+  return(
+    <BottomTab.Navigator>
+      <BottomTab.Screen name="TrackStackNavigator" component={TrackStackNavigator}/>
+      <BottomTab.Screen name="TrackCreateScreen" component={TrackCreateScreen}/>
+      <BottomTab.Screen name="AccountScreen" component={AccountScreen}/>
+    </BottomTab.Navigator>
+  );
+}
+
+
+
+export default BottomTabNavigator;
